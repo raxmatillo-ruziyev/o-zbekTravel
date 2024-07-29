@@ -45,6 +45,15 @@
     .container {
         width: 900px;
     }
+    .box{
+        width: 250px;
+    }
+    .box-title{
+        font-size: 25px;
+    }
+    .box-text{
+        font-size: 16px;
+    }
 }
 
 @media (max-width:920px) {
@@ -57,17 +66,43 @@
     .container {
         width: 700px;
     }
+    .box{
+        width: 200px;
+
+    }
+    .box-title{
+        font-size: 23px;
+    }
+    .box-text{
+        font-size: 15px;}
 }
 
 @media (max-width:720px) {
     .container {
         width: 600px;
     }
+    .box{
+        width: 280px;
+      
+    }
+    .box-title{
+        font-size: 28px;
+    }
+    .box-text{
+        font-size: 18px;
+    }
+   
 }
 
 @media (max-width:620px) {
     .container {
         width: 500px;
+    }
+    .box-title{
+        font-size: 26px;
+    }
+    .box-text{
+        font-size: 17px;
     }
 }
 
@@ -75,11 +110,28 @@
     .container {
         width: 400px;
     }
+    .box-title{
+        font-size: 24px;
+    }
+    .box-text{
+        font-size: 17px;
+    }
 }
 
 @media (max-width:420px) {
     .container {
         width: 300px;
+    }
+    .box{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .box-title{
+        padding-top: 5px;
+        font-size: 23px;
+    }
+    .box-text{
+        font-size: 16px;
     }
 }
 

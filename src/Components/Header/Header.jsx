@@ -13,9 +13,9 @@ const Header = () => {
         <Navbar/>
         <Header2 headerTitle={t("9")} headerText={t("10")}/>
        
-       
-        </div>
         <Sliderr/>
+        </div>
+      
     </header>
 
       

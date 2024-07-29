@@ -11,9 +11,10 @@ import slider5 from '../../assets/toshkent.jpg'
 import slider6 from '../../assets/turkiston.jpg'
 import slider7 from '../../assets/xiva.png'
 import slider8 from '../../assets/zomin.png'
+
 const Sliderr = () => {
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     slidesToShow: 6,
     slidesToScroll: 1,
@@ -21,104 +22,105 @@ const Sliderr = () => {
     speed: 2000,
     autoplaySpeed: 1000,
     cssEase: "linear",
+    arrows: false, // O'q tugmalarini olib tashlash
     responsive: [
       {
-        breakpoint: 1220, // 1200px va pastga
+        breakpoint: 1220,
         settings: {
           slidesToShow: 6,
           slidesToScroll: 1,
           infinite: true,
-          dots: true
+          dots: false
         }
       },
       {
-        breakpoint: 1120, // 992px va pastga
+        breakpoint: 1120,
         settings: {
           slidesToShow: 5,
           slidesToScroll: 1,
           infinite: true,
-          dots: true
+          dots: false
         }
       },
       {
-        breakpoint: 1020, // 768px va pastga
+        breakpoint: 1020,
         settings: {
           slidesToShow: 5,
           slidesToScroll: 1,
           infinite: true,
-          dots: true
+          dots: false
         }
       },
       {
-        breakpoint: 920, // 576px va pastga
+        breakpoint: 920,
         settings: {
           slidesToShow: 4,
           slidesToScroll: 1,
           infinite: true,
-          dots: true
+          dots: false
         }
       },
       {
-        breakpoint: 820, // 576px va pastga
+        breakpoint: 820,
         settings: {
           slidesToShow: 4,
           slidesToScroll: 1,
           infinite: true,
-          dots: true
+          dots: false
         }
       },
       {
-        breakpoint: 720, // 576px va pastga
+        breakpoint: 720,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
-          dots: true
+          dots: false
         }
       },
       {
-        breakpoint: 620, // 576px va pastga
+        breakpoint: 620,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
-          dots: true
+          dots: false
         }
       },
       {
-        breakpoint: 520, // 576px va pastga
+        breakpoint: 520,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
           infinite: true,
-          dots: true
+          dots: false
         }
       },
       {
-        breakpoint: 420, // 576px va pastga
+        breakpoint: 420,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
           infinite: true,
-          dots: true
+          dots: false
         }
       },
       {
-        breakpoint: 320, // 576px va pastga
+        breakpoint: 320,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
           infinite: true,
-          dots: true
+          dots: false
         }
       },
       {
-        breakpoint: 220, // 576px va pastga
+        breakpoint: 220,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
           infinite: true,
-          dots: true
+          dots: false
         }
       }
     ]
@@ -126,37 +128,36 @@ const Sliderr = () => {
   
   return (
     <>
-    <div className="slider-container">
-      <Slider {...settings}>
-        <div>
-      <img className="slider-img" src={slider1} alt="" />
-        </div>
-        <div>
-        <img className="slider-img" src={slider2} alt="" />
-        </div>
-        <div>
-          <img className="slider-img" src={slider3} alt="" />
-        </div>
-        <div>
-          <img className="slider-img" src={slider4} alt="" />
-        </div>
-        <div>
-          <img className="slider-img" src={slider5} alt="" />
-        </div>
-        <div>
-          <img className="slider-img" src={slider6} alt="" />
-        </div>
-        <div>
-          <img className="slider-img" src={slider7} alt="" />
-        </div>
-        <div>
-          <img className="slider-img" src={slider8} alt="" />
-        </div>
-      </Slider>
-    </div>
-      
+      <div className="slider-container">
+        <Slider {...settings}>
+          <div>
+            <img className="slider-img" src={slider1} alt="" />
+          </div>
+          <div>
+            <img className="slider-img" src={slider2} alt="" />
+          </div>
+          <div>
+            <img className="slider-img" src={slider3} alt="" />
+          </div>
+          <div>
+            <img className="slider-img" src={slider4} alt="" />
+          </div>
+          <div>
+            <img className="slider-img" src={slider5} alt="" />
+          </div>
+          <div>
+            <img className="slider-img" src={slider6} alt="" />
+          </div>
+          <div>
+            <img className="slider-img" src={slider7} alt="" />
+          </div>
+          <div>
+            <img className="slider-img" src={slider8} alt="" />
+          </div>
+        </Slider>
+      </div>
     </>
-  )
+  );
 }
 
-export default Sliderr
+export default Sliderr;
