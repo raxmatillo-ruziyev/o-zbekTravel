@@ -11,7 +11,7 @@ const Turkiston = () => {
         <div className="turkiston">
         <div className="container">
         <Navbar/>
-        <Header2 headerTitle={t("19")} headerText={t("10")}/>
+        <Header2 headerTitle={t("20")} headerText={t("10")}/>
        
         <Sliderr/>
         </div>

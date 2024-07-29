@@ -11,7 +11,7 @@ const Xiva = () => {
         <div className="xiva">
         <div className="container">
         <Navbar/>
-        <Header2 headerTitle={t("19")} headerText={t("10")}/>
+        <Header2 headerTitle={t("21")} headerText={t("10")}/>
        
         <Sliderr/>
         </div>
