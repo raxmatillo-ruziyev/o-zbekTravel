@@ -13,9 +13,9 @@ const Toshkent = () => {
         <Navbar/>
         <Header2 headerTitle={t("19")} headerText={t("10")}/>
        
-       
-        </div>
         <Sliderr/>
+        </div>
+ 
     </div>
     </>
   )
