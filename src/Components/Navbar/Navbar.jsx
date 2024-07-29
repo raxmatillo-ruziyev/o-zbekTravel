@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Drawer } from 'antd';
 import './Navbar.scss'
 import logo from '../../assets/logo.svg'
-import surxon from '../../assets/surxon.jpg'
-import turkiston from '../../assets/turkiston.jpeg'
+import surxon from '../../assets/surxon1.jpg'
+import turkiston from '../../assets/turkiston.jpg'
 import bosh from '../../assets/bosh.png'
 import xiva from '../../assets/xiva.png'
 import zomin from '../../assets/zomin.png'
-import toshkent from '../../assets/toshkent.jpeg'
+import toshkent from '../../assets/toshkent.jpg'
 import samarqand from '../../assets/samarqand.jpeg'
 import buxoro from '../../assets/buxoro.png'
 import { Link } from 'react-router-dom';
@@ -49,36 +49,36 @@ const Navbar = () => {
                                     <button  onClick={()=> changeLanguage("en")}  className='drawer-btn'></button>
                                 </div>
 
-                                <Link className='drawer-links' href="#"> 
+                                <Link to={'/'} className='drawer-links' href="#"> 
                                 <img className='drawer-img' src={bosh} alt="" />{t("1")}</Link>
 
 
-                                <Link className='drawer-links' href="#">
+                                <Link to={'/buxoro'} className='drawer-links' href="#">
                                 <img className='drawer-img' src={buxoro} alt="" />
                                     {t("2")}</Link>
 
 
-                                <Link className='drawer-links' href="#">
+                                <Link to={'/samarqand'} className='drawer-links' href="#">
                                 <img className='drawer-img' src={samarqand} alt="" />
                             {t("4")}</Link>
 
-                                <Link className='drawer-links' href="#">
+                                <Link to={'/toshkent'} className='drawer-links' href="#">
                                 <img className='drawer-img' src={toshkent} alt="" />
                                 	{t("3")}</Link>
 
-                                <Link className='drawer-links' href="#">
+                                <Link to={'/zomin'} className='drawer-links' href="#">
                                 <img className='drawer-img' src={zomin} alt="" />
                                 	{t("5")}</Link>
 
-                                <Link className='drawer-links' href="#">
+                                <Link to={'/xiva'} className='drawer-links' href="#">
                                 <img className='drawer-img' src={xiva} alt="" />
                                 {t("6")}</Link>
 
-                                <Link className='drawer-links' href="#">
-                                <img className='drawer-img' src={turkiston} alt="" />
+                                <Link to={'/turkiston'} className='drawer-links' href="#">
+                                <img  className='drawer-img' src={turkiston} alt="" />
                                 	{t("7")}</Link>
 
-                                <Link className='drawer-links' href="#">
+                                <Link to={'/surxon'} className='drawer-links' href="#">
                                 <img className='drawer-img' src={surxon} alt="" />
                                 {t("8")}</Link>
 
