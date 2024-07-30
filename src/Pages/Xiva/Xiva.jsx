@@ -23,6 +23,7 @@ const Xiva = () => {
             <iframe 
             width="100%" 
             height="100%" 
+            style={{borderRadius:"10px"}}
             src="https://www.youtube.com/embed/kFmjC4DITt4?si=ZCxj0DUAgnI5mMXd&controls=0&modestbranding=1&rel=0" 
             title="YouTube video player" 
             frameborder="0" 

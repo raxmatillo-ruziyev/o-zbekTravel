@@ -23,6 +23,7 @@ const Buxoro = () => {
             <iframe 
             width="100%" 
             height="100%" 
+            style={{borderRadius:"10px"}}
             src="https://www.youtube.com/embed/Ccmjs_y0GU0?si=L3o1vgfA5RJfEVgs" 
             title="YouTube video player" 
             frameborder="0" 
