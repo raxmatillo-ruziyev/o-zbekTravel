@@ -5,7 +5,7 @@ import Header2 from '../../Components/Header/Header2'
 import Sliderr from '../../Components/Slider/Sliderr'
 import { useTranslation } from 'react-i18next'
 import Hero from '../../Components/Hero/Hero'
-import image1 from '../../assets/rasm9.jpg';
+import image1 from '../../assets/rasm1.jpeg';
 import image2 from '../../assets/rasm12.jpeg';
 import image3 from '../../assets/rasm13.jpeg';
 import image4 from '../../assets/rasm14.jpeg';
