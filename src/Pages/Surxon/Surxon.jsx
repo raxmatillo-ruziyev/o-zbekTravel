@@ -5,6 +5,15 @@ import Header2 from '../../Components/Header/Header2'
 import Sliderr from '../../Components/Slider/Sliderr'
 import { useTranslation } from 'react-i18next'
 import Hero from '../../Components/Hero/Hero'
+import image1 from '../../assets/rasm11.jpeg';
+import image2 from '../../assets/rasm12.jpeg';
+import image3 from '../../assets/rasm13.jpeg';
+import image4 from '../../assets/rasm14.jpeg';
+import image5 from '../../assets/rasm15.jpeg';
+import image6 from '../../assets/rasm16.jpeg';
+import image7 from '../../assets/rasm17.jpeg';
+import image8 from '../../assets/rasm18.jpeg';
+import image9 from '../../assets/rasm10.jpeg';
 const Surxon = () => {
     const {t,i18n} =useTranslation()
   return (
