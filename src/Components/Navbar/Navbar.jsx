@@ -12,6 +12,7 @@ import samarqand from '../../assets/samarqand.jpeg'
 import buxoro from '../../assets/buxoro.png'
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { TbAlignLeft } from "react-icons/tb";
 import i18n from '../../i18n';
 const Navbar = () => {
     const [open, setOpen] = useState(false);
@@ -39,7 +40,7 @@ const Navbar = () => {
                 <div className="container">
                     <div className="nav-box">
                         <a className='nav-link' href="#"><img className='nav-img' src={logo} alt="" /></a>
-                        <button onClick={showDrawer} className='nav-btn'><i id='nav-icon' className='fa fa-align-left'></i></button>
+                        <button onClick={showDrawer} className='nav-btn'><TbAlignLeft /></button>
 
                         <Drawer onClose={onClose} open={open}>
                             <div className="drawer-box">

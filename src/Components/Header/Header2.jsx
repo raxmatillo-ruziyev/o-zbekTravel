@@ -24,7 +24,7 @@ const Header2 = ({headerTitle,headerText}) => {
                 </li>
             </ul>
             <ul className="header-next-list">
-                <li className="header-next-item"><Button name={t("17")} color={"#FF9548"}/></li>
+                <li className="header-next-item"><Button  name={t("17")} color={"#FF9548"}/></li>
                 <li className="header-next-item"><Button name={t("18")} color={"#5EC2EC"}/></li>
             </ul>
         </div>
