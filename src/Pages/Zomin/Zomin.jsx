@@ -15,7 +15,11 @@ const Zomin = () => {
         <Header2 headerTitle={t("19")} headerText={t("10")}/>
        
         <Sliderr/>
-        <Hero iframe={
+      
+        </div>
+     
+    </div>
+    <Hero iframe={
             <iframe 
             width="100%" 
             height="100%" 
@@ -28,9 +32,6 @@ const Zomin = () => {
           </iframe>
           
         }/>
-        </div>
-     
-    </div>
     </>
   )
 }
