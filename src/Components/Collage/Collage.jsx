@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Collage.scss';
 
 
@@ -7,6 +7,10 @@ import { useTranslation } from 'react-i18next';
 
 const Collage = ({image1,image2,image3,image4,image5,image6,image7,image8,image9}) => {
     const {t,i18n}= useTranslation();
+    useEffect(() => {
+        const savedLanguage = localStorage.getItem('i18nextLng') || 'uz';
+        i18n.changeLanguage(savedLanguage);
+      }, []);
     return (
         <div className="collage">
             <div className='container'>

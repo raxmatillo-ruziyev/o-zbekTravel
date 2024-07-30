@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Header.scss'
 import Box from '../Box/Box'
 import { useTranslation } from 'react-i18next'
 import Button from '../Button/Button'
 const Header2 = ({headerTitle,headerText}) => {
     const {t,i18n} =useTranslation();
+    useEffect(() => {
+        const savedLanguage = localStorage.getItem('i18nextLng') || 'uz';
+        i18n.changeLanguage(savedLanguage);
+      }, []);
   return (
     <>
     <div className="header2">

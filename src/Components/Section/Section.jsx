@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Section.scss'
 import { useTranslation } from 'react-i18next'
 import Box from '../Box/Box';
 import Button from '../Button/Button';
 const Section = () => {
     const { t, i18n } = useTranslation();
+    useEffect(() => {
+        const savedLanguage = localStorage.getItem('i18nextLng') || 'uz';
+        i18n.changeLanguage(savedLanguage);
+      }, []);
     return (
         <>
             <div className="section">

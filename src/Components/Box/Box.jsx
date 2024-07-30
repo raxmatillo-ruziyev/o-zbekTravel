@@ -3,6 +3,7 @@ import './Box.scss'
 import { useTranslation } from 'react-i18next'
 const Box = ({boxTitle,boxText}) => {
     const {t,i18n} = useTranslation();
+    
   return (
     <>
     <div className="box">
