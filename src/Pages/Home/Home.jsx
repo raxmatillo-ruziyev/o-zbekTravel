@@ -9,8 +9,9 @@ const Home = () => {
       <Header />
       <Hero iframe={
    <iframe
-   width="560"
-   height="315"
+   width="100%"
+   height="100%"
+   style={{borderRadius:"10px"}}
    src="https://www.youtube.com/embed/48PSJqwZVIc?si=m7yM65XklCITGD09&controls=0&showinfo=0&modestbranding=1&rel=0"
    title="YouTube video player"
    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

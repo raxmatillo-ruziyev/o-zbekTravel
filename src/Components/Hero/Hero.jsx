@@ -8,7 +8,7 @@ const Hero = ({iframe}) => {
     <div className="hero">
         <div className="container">
             <h1 className="hero-title">{t("22")}</h1>
-            <div>{iframe}</div>
+            <div className='hero-vidio'>{iframe}</div>
         </div>
     </div>
       
