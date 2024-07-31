@@ -16,6 +16,7 @@ import image8 from '../../assets/rasm18.jpeg';
 import image9 from '../../assets/rasm10.jpeg';
 import Collage from '../../Components/Collage/Collage'
 import Service from '../../Components/Service/Service'
+import Section from '../../Components/Section/Section'
 const Turkiston = () => {
     const {t,i18n} =useTranslation()
   return (

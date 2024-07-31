@@ -7,6 +7,7 @@ const Card = ({ card1,cardTitle,cardText }) => {
         <>
             <div className="card">
                 <img src={card1} alt="" className='card-image'/>
+                
                 <h1 className="card-title">{cardTitle}</h1>
                 <p className="card-text">{cardText}</p>
                 <a href="#">    <Button name={t("32")} color={"#5EC2EC"} /></a>
