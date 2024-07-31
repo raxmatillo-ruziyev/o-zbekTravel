@@ -27,7 +27,7 @@ const Section = () => {
                             <li className="section-item"><Box boxTitle={t("28")} boxText={t("16")} /></li>
 
                         </ul>
-                        <a className="header-next-item"><Button name={t("29")} color={"#5EC2EC"}/></a>
+                        <a className="header-next-item"><Button name={t("29")} color={"#FF9548"}/></a>
                     </div>
                 </div>
             </div>
