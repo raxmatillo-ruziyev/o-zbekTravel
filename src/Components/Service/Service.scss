@@ -71,11 +71,27 @@
     .container {
         width: 600px;
     }
+    .service-title{
+        font-size: 24px;
+        margin: 0;
+    }
+    .service-text{
+        font-size: 18px;
+        margin: 0;
+    }
 }
 
 @media (max-width:620px) {
     .container {
         width: 500px;
+    }
+    .service-title{
+        font-size: 22px;
+        margin: 0;
+    }
+    .service-text{
+        font-size: 17px;
+        margin: 0;
     }
 }
 
@@ -83,16 +99,40 @@
     .container {
         width: 400px;
     }
+    .service-title{
+        font-size: 20px;
+        margin: 0;
+    }
+    .service-text{
+        font-size: 16px;
+        margin: 0;
+    }
 }
 
 @media (max-width:420px) {
     .container {
         width: 300px;
     }
+    .service-title{
+        font-size: 19px;
+        margin: 0;
+    }
+    .service-text{
+        font-size: 15px;
+        margin: 0;
+    }
 }
 
 @media (max-width:320px) {
     .container {
         width: 200px;
+    }
+    .service-title{
+        font-size: 18px;
+        margin: 0;
+    }
+    .service-text{
+        font-size: 14px;
+        margin: 0;
     }
 }
