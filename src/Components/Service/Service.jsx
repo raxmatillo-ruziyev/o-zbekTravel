@@ -19,14 +19,15 @@ const Service = () => {
             <p className="service-text">{t("36")}</p>
             <ul className="service-list">
                 <li className="service-item">
-                    <Card cardTitle={t("30")}  card1={card1} cardText={t("31")} kun={t("37")} odam={t("38")} cardText2={t("39")}/>
+                    <Card cardTitle={t("30")}  card1={card1} cardText={t("31")} kun={t("37")} odam={t("38")} cardText2={t("39")} card4={"1,200 $"} cardText3={"1,000 $"}/>
                 </li>
                 <li className="service-item">
-                <Card cardTitle={t("33")}  card1={card2} cardText={t("31")}kun={t("37")} odam={t("38")}cardText2={t("39")}/>
+                <Card cardTitle={t("33")}  card1={card2} cardText={t("31")}kun={t("37")} odam={t("38")}cardText2={t("39")} card4={"1,200 $"} cardText3={"1,000 $"}/>
                 </li>
                 <li className="service-item">
-                <Card cardTitle={t("34")}  card1={card3} cardText={t("31")}kun={t("37")} odam={t("38")}cardText2={t("39")}/>
+                <Card cardTitle={t("34")}  card1={card3} cardText={t("31")}kun={t("37")} odam={t("38")}cardText2={t("39")} card4={"1,200 $"} cardText3={"1,000 $"}/>
                 </li>
+                
             </ul>
         </div>
     </div>

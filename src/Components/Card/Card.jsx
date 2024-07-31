@@ -3,7 +3,7 @@ import './Card.scss'
 import { t } from 'i18next'
 import Button from '../Button/Button'
 import { AiOutlineCalendar, AiOutlineEnvironment, AiOutlineUser } from 'react-icons/ai'
-const Card = ({ card1,cardTitle,cardText,kun,odam,cardText2 }) => {
+const Card = ({ card1,cardTitle,cardText,kun,odam,cardText2,cardText3,card4 }) => {
     return (
         <>
             <div className="card">
@@ -26,6 +26,10 @@ const Card = ({ card1,cardTitle,cardText,kun,odam,cardText2 }) => {
                    </span>
                 </h1>
                 <p className="card-text2"><AiOutlineEnvironment /> {cardText2}</p>
+               <div className='card-wrap'>
+               <p className="card-text3">{cardText3}</p>
+               <s>{card4}</s>
+               </div>
                 <p className="card-text">{cardText}</p>
                 <a href="#">    <Button name={t("32")} color={"#5EC2EC"} /></a>
 
