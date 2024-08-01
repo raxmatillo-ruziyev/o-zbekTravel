@@ -16,6 +16,7 @@ import Section from '../../Components/Section/Section'
 import Service from '../../Components/Service/Service'
 import Table from '../../Components/Table/Table'
 import Accardion from '../../Components/Accardion/Accardion'
+import Conatct from '../../Components/Contact/Conatct'
 
 const Home = () => {
   return (
@@ -37,6 +38,7 @@ const Home = () => {
  <Service/>
  <Table/>
  <Accardion/>
+ <Conatct/>
 
 
 
