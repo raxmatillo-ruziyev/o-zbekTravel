@@ -136,36 +136,104 @@
     .container{
         width: 1100px;
     }
+  .contact{
+    .contact-box{
+        width: 85%;
+    }
+  }
     
 }
 @media (max-width:1120px) {
     .container{
         width: 1000px;
     }
+    .contact{
+        .contact-box{
+            width: 93%;
+        }
+      }
     
 }
 @media (max-width:1020px) {
     .container{
         width: 900px;
     }
+    .contact{
+        .contact-box{
+            width: 98%;
+        }
+      }
     
 }
 @media (max-width:920px) {
     .container{
         width: 800px;
     }
+    .contact{
+        .contact-box{
+            width: 98%;
+        }
+      }
     
 }
 @media (max-width:820px) {
     .container{
         width: 700px;
     }
+    .contact{
+        .contact-box{
+           display: flex;
+           flex-direction: column-reverse;
+           width: 100%;
+        }
+        .contact-left{
+            width: 90%;
+            margin: 0 auto;
+            border-bottom-left-radius:8px;
+            border-bottom-right-radius:8px;
+            border-top-left-radius:0;
+        }
+        .contact-right{
+            padding-top: 20px;
+            width: 90%;
+            margin: 0 auto;
+            border-top-left-radius:8px;
+            border-top-right-radius:8px;
+            border-bottom-right-radius:0;
+            .contact-text{
+                text-align: center;
+            }
+        }
+      }
     
 }
 @media (max-width:720px) {
     .container{
         width: 600px;
     }
+    .contact{
+        .contact-box{
+           display: flex;
+           flex-direction: column-reverse;
+           width: 100%;
+        }
+        .contact-left{
+            width: 98%;
+            margin: 0 auto;
+            border-bottom-left-radius:8px;
+            border-bottom-right-radius:8px;
+            border-top-left-radius:0;
+        }
+        .contact-right{
+            padding-top:20px ;
+            width: 98%;
+            margin: 0 auto;
+            border-top-left-radius:8px;
+            border-top-right-radius:8px;
+            border-bottom-right-radius:0;
+        
+        }
+      }
     
 }
 @media (max-width:620px) {
@@ -177,6 +245,17 @@
 @media (max-width:520px) {
     .container{
         width: 400px;
+    }
+    .contact{
+        .contact-left{
+            .contact-title{
+                font-size: 25px;
+            }
+           
+        }
+        .contact-right{
+            padding: 10px   ;
+        }
     }
     
 }

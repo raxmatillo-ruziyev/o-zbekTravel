@@ -48,10 +48,11 @@ const Conatct = () => {
                                 <iframe
                                     src="https://yandex.uz/map-widget/v1/?ll=69.279737%2C41.311151&z=12"
                                     width="100%"
-                                    height="auto    "
+                                    height="200px"
+                                    
                                     frameBorder="1"
                                     allowFullScreen
-                                    style={{ position: 'relative' }}
+                                    style={{ position: 'relative',borderRadius:"8px" }}
                                 ></iframe>
                             </div>
                             <ul className='contact-list'>
