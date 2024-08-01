@@ -18,6 +18,7 @@ import Collage from '../../Components/Collage/Collage'
 import Service from '../../Components/Service/Service'
 import Section from '../../Components/Section/Section'
 import Accardion from '../../Components/Accardion/Accardion'
+import Conatct from '../../Components/Contact/Conatct'
 const Turkiston = () => {
     const {t,i18n} =useTranslation()
   return (
@@ -50,6 +51,7 @@ const Turkiston = () => {
          <Section/>
          <Service/>
          <Accardion/>
+         <Conatct/>
  
     </>
   )
