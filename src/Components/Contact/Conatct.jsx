@@ -51,7 +51,7 @@ const Contact = () => {
   return (
     <>
      <ToastContainer />
-      <div className="contact">
+      <div className="contact" id='contact'>
         <div className="container">
           <div className="contact-box">
             <div className="contact-left">

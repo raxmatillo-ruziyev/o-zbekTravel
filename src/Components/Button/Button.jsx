@@ -4,12 +4,14 @@ import './Button.scss'
 const Button = ({ name, color }) => {
   return (
     <>
-      <button 
+    <a href="#contact">
+    <button 
         className='btn' 
         style={{ background: color }} 
       >
         {name}
       </button>
+    </a>
     </>
   )
 }
