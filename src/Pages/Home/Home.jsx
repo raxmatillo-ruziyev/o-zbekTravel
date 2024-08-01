@@ -15,6 +15,7 @@ import image9 from '../../assets/rasm10.jpeg';
 import Section from '../../Components/Section/Section'
 import Service from '../../Components/Service/Service'
 import Table from '../../Components/Table/Table'
+import Accardion from '../../Components/Accardion/Accardion'
 
 const Home = () => {
   return (
@@ -35,6 +36,7 @@ const Home = () => {
  <Section/>
  <Service/>
  <Table/>
+ <Accardion/>
 
 
 
