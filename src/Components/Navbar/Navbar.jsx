@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Drawer } from 'antd';
 import './Navbar.scss'
-import logo from '../../assets/logo.svg'
+import logo from '../../assets/logo.webp'
 import surxon from '../../assets/surxon1.jpg'
 import turkiston from '../../assets/turkiston.jpg'
 import bosh from '../../assets/bosh.png'
