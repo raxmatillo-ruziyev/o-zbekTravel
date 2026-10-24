@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'
 import { FaInfinity, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa'
 import { IoLogoTwitter } from 'react-icons/io'
 import { RiMessengerFill } from 'react-icons/ri'
-import icon from '../../assets/logo.webp'
+import icon from '../../assets/logo.svg'
 const Footer = () => {
     const {t,i18n} =useTranslation();
     useEffect(() => {
