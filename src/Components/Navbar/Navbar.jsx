@@ -25,13 +25,6 @@ const NAV = [
     { to: '/xiva', key: '6', img: xiva },
     { to: '/turkiston', key: '7', img: turkiston },
     { to: '/surxon', key: '8', img: surxon },
-    { to: '/buxoro', key: '101', img: buxoro },
-    { to: '/samarqand', key: '102', img: samarqand },
-    { to: '/toshkent', key: '103', img: toshkent },
-    { to: '/zomin', key: '104', img: zomin },
-    { to: '/xiva', key: '105', img: xiva },
-    { to: '/turkiston', key: '106', img: turkiston },
-    { to: '/surxon', key: '107', img: surxon },
 
 ];
 

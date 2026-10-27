@@ -1,19 +1,24 @@
-import React from 'react'
-import './Button.scss'
+import React from 'react';
+import './Button.scss';
 
-const Button = ({ name, color }) => {
-  return (
-    <>
-    <a href="#contact">
-    <button 
-        className='btn' 
-        style={{ background: color }} 
-      >
-        {name}
-      </button>
-    </a>
-    </>
-  )
-}
+const Button = ({ name, children, color, href = '#contact', variant = 'primary', className = '', style, ...rest }) => {
+    const classes = `ui-btn ui-btn--${color ? 'custom' : variant}${className ? ` ${className}` : ''}`;
+    const inlineStyle = color ? { background: color, ...style } : style;
+    const label = children ?? name;
 
-export default Button
+    if (href === null) {
+        return (
+            <button type="button" className={classes} style={inlineStyle} {...rest}>
+                {label}
+            </button>
+        );
+    }
+
+    return (
+        <a href={href} className={classes} style={inlineStyle} {...rest}>
+            {label}
+        </a>
+    );
+};
+
+export default Button;

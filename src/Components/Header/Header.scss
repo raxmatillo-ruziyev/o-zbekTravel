@@ -1,186 +1,180 @@
+// Ranglar Navbar.scss dagi :root o'zgaruvchilaridan olinadi (zaxira qiymatlari bilan)
+
 .header {
-    width: 100%;
-    // height: 100vh;
-    padding: 60px 0;
-    background-image: url(/src/assets/bosh.png);
-    background-size: cover;
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    flex-direction: column;
+    min-height: 720px;
+    min-height: 100svh;
+    background: #0a4d5c; // rasm yuklanguncha ko'rinadigan rang
+    color: #fff;
+    font-family: 'Manrope', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+    // Fon rasmi
+    &__bg {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    // Pastdan yumshoq qoramtir: rasmlar lentasi fon bilan uyg'unlashadi
+    &::after {
+        content: '';
+        position: absolute;
+        inset: auto 0 0 0;
+        z-index: -1;
+        height: 40%;
+        background: linear-gradient(to top, rgba(6, 40, 50, 0.65), rgba(6, 40, 50, 0));
+        pointer-events: none;
+    }
 }
 
+// Lenta doim hero ning pastida turadi
+.header > .marquee {
+    margin-top: auto;
+    padding-bottom: 32px;
+}
+
+// ---------- Asosiy qism: chapda matn, o'ngda kartalar ----------
 .header2 {
-    width: 100%;
-    text-align: left;
-}
-
-.header-box {
-    width: 100%;
-}
-
-.header-title {
-    font-size: 42px;
-    width: 60%;
-    line-height: 55px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: #fff;
-    text-align: left;
-    font-weight: 550;
-    padding-top: 50px;
-}
-
-.header-text {
-    font-size: 18px;
-    width: 60%;
-    line-height: 25px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: #fff;
-    text-align: left;
-    padding-top: 10px;
-    padding-bottom: 30px;
-
-}
-
-.header-list {
+    position: relative;
+    isolation: isolate;
     display: flex;
-    list-style: none;
-}
+    align-items: flex-start;
+    // Tepadagi bo'shliq hamma sahifada bir xil: qotib turuvchi navbar ostida qolib ketmaydi
+    padding: calc(var(--nav-h, 72px) + clamp(40px, 8vh, 96px)) 0 clamp(32px, 6vh, 64px);
+    color: #fff;
+    font-family: 'Manrope', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 
-.header-item {
-    margin-right: 20px;
-    margin-bottom: 30px;
-}
-
-.header-next-list {
-    display: flex;
-    list-style: none;
-}
-
-.header-next-item {
-    margin-right: 50px;
-    margin-bottom: 30px;
-}
-
-@media (max-width:1220px) {
-    .container {
-        width: 1110px;
+    // Qoramtir qatlam shu blokning o'zida: har qanday fon rasmida oq matn o'qiladi.
+    // Katta box-shadow + clip-path uni ekranning butun eniga yoyadi (o'rovchi qanday bo'lmasin).
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background: rgba(6, 40, 50, 0.55);
+        box-shadow: 0 0 0 100vmax rgba(6, 40, 50, 0.55);
+        -webkit-clip-path: inset(0 -100vmax);
+        clip-path: inset(0 -100vmax);
+        pointer-events: none;
     }
 
-}
-
-@media (max-width:1120px) {
-    .container {
-        width: 1000px;
+    &__inner {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+        align-items: center;
+        gap: clamp(32px, 6vw, 80px);
+        width: min(100% - 40px, 1200px);
+        margin-inline: auto;
+        text-align: left;
     }
 
-}
+    &__title {
+        max-width: 620px;
+        margin: 0;
+        font-size: clamp(2rem, 4.6vw, 3.25rem);
+        font-weight: 700;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        text-wrap: balance;
+        text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
+    }
 
-@media (max-width:1020px) {
-    .container {
-        width: 900px;
+    &__text {
+        max-width: 520px;
+        margin: 18px 0 0;
+        color: rgba(255, 255, 255, 0.9);
+        font-size: clamp(1rem, 1.6vw, 1.15rem);
+        line-height: 1.6;
     }
-    .header2 {
-        width: 100%;
-        text-align: center;
-    }
-    .header-title{
-        width: 100%;
-        text-align: center;
-    }
-    .header-text{
-        width: 100%;
-        text-align: center;
-    }
-    .header-list{
+
+    &__actions {
         display: flex;
-        justify-content: space-between;
-        padding: 0;
-    }
-    .header-item{
-       margin-right: 0;
-    }
-    .header-next-list{
-        display: flex;
-        justify-content: space-evenly;
-    }
-    .header-next-item{
-        margin-right: 0;
-    }
-}
-
-@media (max-width:920px) {
-    .container {
-        width: 800px;
-    }
-    .header-title{
-        font-size: 36px;
-    }
-}
-
-@media (max-width:820px) {
-    .container {
-        width: 700px;
-    }
-}
-
-@media (max-width:720px) {
-    .container {
-        width: 600px;
-    }
-    .header-list{
-        display: flex;
-        flex-direction: row;
-        margin: 5px;
         flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-
-      
+        gap: 12px;
+        margin-top: 28px;
     }
-  
+
+    // O'ng tomondagi kartalar: zinapoya shaklida
+    &__cards {
+        display: grid;
+        gap: 12px;
+        width: 100%;
+        max-width: 440px;
+        margin: 0;
+        padding: 0;
+        justify-self: end;
+        list-style: none;
+
+        > li:nth-child(2) {
+            margin-left: 28px;
+        }
+    }
+
+    // ---------- Sahifa ochilishidagi animatsiya ----------
+    &__title,
+    &__text,
+    &__actions {
+        animation: header-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+    }
+
+    &__text { animation-delay: 0.08s; }
+    &__actions { animation-delay: 0.16s; }
+
+    &__cards > li {
+        animation: header-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+        animation-delay: calc(0.2s + var(--i, 0) * 0.09s);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        &__title,
+        &__text,
+        &__actions,
+        &__cards > li {
+            animation: none;
+        }
+    }
+
+    // ---------- Planshet va telefon: bitta ustun, hammasi markazda ----------
+    @media (max-width: 1020px) {
+        &__inner {
+            grid-template-columns: 1fr;
+            gap: 36px;
+            text-align: center;
+        }
+
+        &__title,
+        &__text {
+            margin-inline: auto;
+        }
+
+        &__actions {
+            justify-content: center;
+        }
+
+        &__cards {
+            max-width: 520px;
+            justify-self: center;
+
+            > li:nth-child(2) {
+                margin-left: 0;
+            }
+        }
+    }
 }
 
-@media (max-width:620px) {
-    .container {
-        width: 500px;
+@keyframes header-rise {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
     }
-    .header-list{
-        gap: 0;
-    }
-    
-}
-
-@media (max-width:520px) {
-    .container {
-        width: 400px;
-    }
-    .header-next-list{
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .header-title{
-        font-size: 30px;
-        line-height: 35px;
-        padding: 5px 0;
-    }
-    .header-text{
-        font-size: 17px;
-        line-height: 17px;
-        padding: 10px 0;
-    }
-  
-}
-
-@media (max-width:420px) {
-    .container {
-        width: 300px;
-    }
-    .header-title{
-        font-size: 27px;
-        line-height: 28px;
-    }
-}
-
-@media (max-width:320px) {
-    .container {
-        width: 200px;
+    to {
+        opacity: 1;
+        transform: none;
     }
 }

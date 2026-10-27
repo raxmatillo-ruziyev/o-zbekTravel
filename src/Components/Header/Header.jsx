@@ -1,30 +1,31 @@
-import React, { useEffect } from 'react'
-import './Header.scss'
-import Navbar from '../Navbar/Navbar'
-import { useTranslation } from 'react-i18next'
-import Header2 from './Header2'
-import Sliderr from '../Slider/Sliderr'
-const Header = () => {
-    const {t,i18n} = useTranslation();
-    useEffect(() => {
-        const savedLanguage = localStorage.getItem('i18nextLng') || 'uz';
-        i18n.changeLanguage(savedLanguage);
-      }, []);
-  return (
-    <>
-    <header className="header">
-        <div className="container">
-        <Navbar/>
-        <Header2 headerTitle={t("9")} headerText={t("10")}/>
-       
-        <Sliderr/>
-        </div>
-      
-    </header>
+import React from 'react';
+import { useTranslation } from 'react-i18next';
+import Navbar from '../Navbar/Navbar';
+import Header2 from './Header2';
+import Sliderr from '../Slider/Sliderr';
+import boshImg from '../../assets/bosh.png';
+import './Header.scss';
 
-      
-    </>
-  )
-}
+/**
+ * Hamma sahifalar uchun BITTA umumiy hero.
+ *
+ *   <Header />                                                   bosh sahifa (rasm: bosh.png)
+ *   <Header image={buxoroBg} headerTitle={t('..')} headerText={t('..')} />   boshqa sahifalar
+ *
+ * Fon rasmi oddiy <img> sifatida chiziladi (object-fit: cover), qoramtir qatlam va matn rangi
+ * Header2 ning o'zida, shuning uchun hero hamma sahifada bir xil joylashadi.
+ */
+const Header = ({ image = boshImg, headerTitle, headerText }) => {
+    const { t } = useTranslation();
 
-export default Header
+    return (
+        <section className="header">
+            <img className="header__bg" src={image} alt="" decoding="async" />
+            <Navbar />
+            <Header2 headerTitle={headerTitle ?? t('9')} headerText={headerText ?? t('10')} />
+            <Sliderr />
+        </section>
+    );
+};
+
+export default Header;
