@@ -19,7 +19,8 @@
         animation: marquee-scroll 45s linear infinite;
     }
 
-    // Ro'yxat ikki marta chizilgani uchun aynan yarmiga siljiydi (gap yarmini ham hisobga olib)
+    // Ro'yxat 4 marta chizilgani uchun aynan bir to'plam masofasiga siljiydi:
+    // -25% (= 100 / 4) va oradagi bo'shliqning to'rtdan biri
     @media (hover: hover) {
         &:hover &__track {
             animation-play-state: paused;
@@ -54,6 +55,6 @@
 
 @keyframes marquee-scroll {
     to {
-        transform: translateX(calc(-50% - var(--gap) / 2));
+        transform: translateX(calc(-25% - var(--gap) / 4));
     }
 }

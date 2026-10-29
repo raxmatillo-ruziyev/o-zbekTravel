@@ -1,14 +1,6 @@
 import React, { useState } from 'react';
 import './VideoFacade.scss';
 
-/**
- * YouTube videoni faqat bosilganda yuklaydi.
- * Avval har sahifada <iframe> darhol yuklanardi: foydalanuvchi videoni ko'rmasa ham,
- * YouTube'ning og'ir skriptlari (taxminan 1 MB) sahifa bilan birga tushardi.
- * Endi boshida faqat kichik rasm (preview) va "play" tugmasi turadi.
- *
- * <Hero iframe={<VideoFacade videoId="Ccmjs_y0GU0" />} />
- */
 const VideoFacade = ({ videoId, title = 'Video' }) => {
     const [playing, setPlaying] = useState(false);
 

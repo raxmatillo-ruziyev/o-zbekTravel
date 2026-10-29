@@ -1,35 +1,43 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import { useTranslation } from 'react-i18next';
 import './Collage.scss';
 
+// Katakchalar tartibi: raqam = shu raqamli rasm (image1...image9 prop'i), 'text' = matnli katakcha.
+// Rasmlarning o'zaro tartibi eskisi bilan bir xil, faqat matnli katakcha mozaikaga mos joyga ko'chirilgan.
+const TILES = [1, 2, 3, 7, 'text', 8, 4, 5, 6, 9];
 
-import { useTranslation } from 'react-i18next';
+// Til tiklash (useEffect + changeLanguage) bu yerdan olib tashlandi: u endi faqat Navbar'da.
+// Rasmlar `alt=""`: ularga izoh yo'q, "Image 1", "Image 2" kabi ma'nosiz matnlar ekran o'qiydiganlarni chalg'itardi.
+const Collage = (props) => {
+    const { t } = useTranslation();
 
-
-const Collage = ({image1,image2,image3,image4,image5,image6,image7,image8,image9}) => {
-    const {t,i18n}= useTranslation();
-    useEffect(() => {
-        const savedLanguage = localStorage.getItem('i18nextLng') || 'uz';
-        i18n.changeLanguage(savedLanguage);
-      }, []);
     return (
-        <div className="collage">
-            <div className='container'>
-                <h1 className="collage-title">{t("23")}</h1>
-                <p className="collage-text">{t("24")}</p>
-                <div className="collage-box">
-                    <div className="collage-item"><img   className='collage-img' src={image1} alt="Image 1" />{}</div>
-                    <div className="collage-item"><img   className='collage-img' src={image2} alt="Image 2" /></div>
-                    <div className="collage-item"><h3 className='collage-subtitle'>{t("25")}</h3></div>
-                    <div className="collage-item"><img   className='collage-img' src={image3} alt="Image 4" /></div>
-                    <div className="collage-item"><img   className='collage-img' src={image7} alt="Image 5" /></div>
-                    <div className="collage-item"><img   className='collage-img' src={image9} alt="Image 6" /></div>
-                    <div className="collage-item"><img   className='collage-img' src={image4} alt="Image 7" /></div>
-                    <div className="collage-item"><img   className='collage-img' src={image5} alt="Image 8" /></div>
-                    <div className="collage-item"><img   className='collage-img' src={image6} alt="Image 9" /></div>
-                    <div className="collage-item"><img   className='collage-img' src={image8} alt="Image 10" /></div>
+        <section className="collage">
+            <div className="collage__inner">
+                <h2 className="collage__title">{t('23')}</h2>
+                <p className="collage__text">{t('24')}</p>
+
+                <div className="collage__grid">
+                    {TILES.map((tile) =>
+                        tile === 'text' ? (
+                            <div className="collage__tile collage__tile--text" key="text">
+                                <h3 className="collage__subtitle">{t('25')}</h3>
+                            </div>
+                        ) : (
+                            <div className="collage__tile" key={tile}>
+                                <img
+                                    className="collage__img"
+                                    src={props[`image${tile}`]}
+                                    alt=""
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                            </div>
+                        )
+                    )}
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

@@ -10,14 +10,16 @@ import slider8 from '../../assets/zomin.png';
 import './Slider.scss';
 
 const IMAGES = [slider1, slider2, slider3, slider4, slider5, slider6, slider7, slider8];
+const COPIES = 4; // Slider.scss dagi animatsiya masofasi (-25%) shu songa bog'liq: 100 / COPIES
 
 // Doimiy aylanib turuvchi rasmlar lentasi faqat CSS bilan ishlaydi.
 // Avval bunga react-slick + 2 ta CSS fayli + 80 qator sozlama kerak bo'lgan edi.
-// Ro'yxat ikki marta chiziladi: shunda animatsiya uzilishsiz, aylanib davom etadi.
+// Ro'yxat 4 marta takrorlanadi: keng ekranda (4K gacha) ham lenta butun enni to'ldirib turadi
+// va animatsiya uzilishsiz aylanadi. (Ikki marta bo'lganda, katta ekranda o'ng tomon bo'sh qolardi.)
 const Sliderr = () => (
     <div className="marquee" aria-hidden="true">
         <ul className="marquee__track">
-            {[...IMAGES, ...IMAGES].map((src, i) => (
+            {Array.from({ length: COPIES }, () => IMAGES).flat().map((src, i) => (
                 <li className="marquee__item" key={i}>
                     <img
                         className="marquee__img"

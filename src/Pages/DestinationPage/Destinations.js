@@ -30,7 +30,7 @@ export const DESTINATIONS = {
     surxon: {
         hero: surxon,
         titleKey: '19',
-        videoId: 'fqOzEUiSsk8',
+        videoId: '4kC3_Pj4obA',
         // Surxon sahifasida kollaj tartibi boshqacha edi, shu saqlangan
         collage: [rasm10, rasm12, rasm13, rasm14, rasm15, rasm16, rasm17, rasm18, rasm11],
     },
@@ -39,3 +39,4 @@ export const DESTINATIONS = {
     xiva: { hero: xiva, titleKey: '21', videoId: 'kFmjC4DITt4' },
     zomin: { hero: zomin, titleKey: '19', videoId: 'x2cbM-auFqE' },
 };
+

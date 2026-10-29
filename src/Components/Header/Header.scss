@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: column;
     min-height: 720px;
-    min-height: 100svh;
+    min-height: min(100svh, 900px);
     background: #0a4d5c; // rasm yuklanguncha ko'rinadigan rang
     color: #fff;
     font-family: 'Manrope', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
@@ -15,20 +15,22 @@
     &__bg {
         position: absolute;
         inset: 0;
-        z-index: -1;
+        z-index: -2;
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
 
-    // Pastdan yumshoq qoramtir: rasmlar lentasi fon bilan uyg'unlashadi
-    &::after {
+    // Qoramtir parda BUTUN hero ni qoplaydi (matn, kartalar va fon ustidan).
+    // Faqat rasmlar lentasi parda ustida turadi, shuning uchun u xiralashmaydi.
+    &::before {
         content: '';
         position: absolute;
-        inset: auto 0 0 0;
+        inset: 0;
         z-index: -1;
-        height: 40%;
-        background: linear-gradient(to top, rgba(6, 40, 50, 0.65), rgba(6, 40, 50, 0));
+        background:
+            linear-gradient(105deg, rgba(6, 40, 50, 0.82) 0%, rgba(6, 40, 50, 0.55) 55%, rgba(6, 40, 50, 0.35) 100%),
+            linear-gradient(to top, rgba(6, 40, 50, 0.55), rgba(6, 40, 50, 0) 45%);
         pointer-events: none;
     }
 }
@@ -49,20 +51,6 @@
     padding: calc(var(--nav-h, 72px) + clamp(40px, 8vh, 96px)) 0 clamp(32px, 6vh, 64px);
     color: #fff;
     font-family: 'Manrope', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-
-    // Qoramtir qatlam shu blokning o'zida: har qanday fon rasmida oq matn o'qiladi.
-    // Katta box-shadow + clip-path uni ekranning butun eniga yoyadi (o'rovchi qanday bo'lmasin).
-    &::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        z-index: -1;
-        background: rgba(6, 40, 50, 0.55);
-        box-shadow: 0 0 0 100vmax rgba(6, 40, 50, 0.55);
-        -webkit-clip-path: inset(0 -100vmax);
-        clip-path: inset(0 -100vmax);
-        pointer-events: none;
-    }
 
     &__inner {
         display: grid;
