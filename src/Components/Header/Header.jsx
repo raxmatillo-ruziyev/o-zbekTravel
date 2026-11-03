@@ -19,12 +19,17 @@ const Header = ({ image = boshImg, headerTitle, headerText }) => {
     const { t } = useTranslation();
 
     return (
-        <section className="header">
-            <img className="header__bg" src={image} alt="" decoding="async" />
+        <>
+            {/* Navbar hero'dan TASHQARIDA: .header ichida isolation: isolate bor, u o'z ichidagi
+                hamma narsani alohida qatlamga o'raydi. Navbar uning ichida qolsa, keyingi bo'limlar
+                (video, kollaj...) navbar ustiga chiqib ketadi. */}
             <Navbar />
-            <Header2 headerTitle={headerTitle ?? t('9')} headerText={headerText ?? t('10')} />
-            <Sliderr />
-        </section>
+            <section className="header">
+                <img className="header__bg" src={image} alt="" decoding="async" />
+                <Header2 headerTitle={headerTitle ?? t('9')} headerText={headerText ?? t('10')} />
+                <Sliderr />
+            </section>
+        </>
     );
 };
 

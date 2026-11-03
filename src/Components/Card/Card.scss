@@ -1,225 +1,212 @@
-.card {
-    width: 300px;
-    padding: 15px;
+// Ranglar Navbar.scss dagi :root o'zgaruvchilaridan olinadi (zaxira qiymatlari bilan)
+// Eski fayldagi 9 ta media-query va qattiq kengliklar (300px, 290px, 350px, 280px, 410px ...) o'rniga
+// karta o'zi qancha joy bo'lsa shunga moslashadi (eng ko'pi bilan 360px).
+// Global `s { ... }` va `#card-icon` qoidalari ham olib tashlandi.
 
-    text-align: left;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
-
-    &:hover {
-        transform: translateY(-5px);
-    }
-}
-
-.card-image {
+.pkg {
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    height: 200px;
-    border-radius: 8px;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    -ms-border-radius: 8px;
-    -o-border-radius: 8px;
-}
-
-.card-wrap {
-    display: flex;
-    justify-content: space-between;
-}
-
-.card-text3 {
-    font-size: 18px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: #FFA767;
-}
-
-.card-text {
+    max-width: 360px;
+    height: 100%;
+    overflow: hidden;
+    color: var(--ink, #0b2e38);
+    font-family: 'Manrope', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
     text-align: left;
-    font-size: 14px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-weight: 400;
-    line-height: 19px;
-    color: #333;
-    padding: 10px 0;
-}
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 0 0 1px rgba(11, 46, 56, 0.06), 0 24px 40px -28px rgba(10, 77, 92, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-s {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 15px;
-}
-
-.card-title {
-    display: flex;
-    justify-content: space-between;
-    padding: 5px 0;
-    font-size: 19px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-weight: 600;
-    line-height: 30px;
-}
-
-#card-icon {
-    font-size: 15px;
-    color: #FFA767;
-}
-
-.card-list {
-    display: flex;
-    padding-left: 0;
-    align-items: center;
-    list-style: none;
-    justify-content: space-between;
-}
-
-.card-list-item {
-    align-items: center;
-    display: flex;
-    font-size: 18px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-.card-subtitle {
-    padding: 5px 0;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-}
-
-.card-text2 {
-    padding-left: 5px;
-    display: flex;
-    gap: 5px;
-    font-size: 17px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
-}
-
-@media (max-width:1220px) {
-    .container {
-        width: 1100px;
+    svg {
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
     }
 
-}
+    // ---------- Rasm va kun/odam belgilari ----------
+    &__media {
+        position: relative;
+        aspect-ratio: 4 / 3;
+        overflow: hidden;
+        background: var(--brand-deep, #0a4d5c); // rasm yuklanguncha ko'rinadigan rang
 
-@media (max-width:1120px) {
-    .container {
-        width: 1000px;
-    }
-}
-
-@media (max-width:1020px) {
-    .container {
-        width: 900px;
-    }
-    .card{
-        width: 290px;
-        padding: 15px 10px;
-    }
-}
-
-@media (max-width:920px) {
-    .container {
-        width: 800px;
-    }
-    .card{
-        width: 350px;
-        padding:10px;}
-}
-
-@media (max-width:820px) {
-    .container {
-        width: 700px;
-    }
-    .card{
-        width: 300px;
-        padding: 15px;
-
-    }
-}
-
-@media (max-width:720px) {
-    .container {
-        width: 600px;
-    }
-    .card{
-        width: 280px;
-        padding: 10px;}
-}
-
-@media (max-width:620px) {
-    .container {
-        width: 500px;
-    }
-    .card{
-        width: 410px;
-        padding: 15px;
-    }
-    .card-image{
-
-    height: 230px;
-    }
-}
-
-@media (max-width:520px) {
-    .container {
-        width: 400px;
-    }
-    .card{
-        width: 350px;
-        padding: 10px;
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(6, 40, 50, 0.6), rgba(6, 40, 50, 0) 55%);
+            pointer-events: none;
         }
-        .card-image{
-            height: 200px;
-            }
-}
-
-@media (max-width:420px) {
-    .container {
-        width: 300px;
     }
-    .card{
-        width: 280px;
-        padding: 10px;
-        }
-}
 
-@media (max-width:320px) {
-    .container {
-        width: 200px;
+    &__img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
     }
-    .card{
-        width: 180px;
-        padding: 10px;
+
+    &__chips {
+        position: absolute;
+        right: 14px;
+        bottom: 14px;
+        left: 14px;
+        z-index: 1;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &__chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 12px;
+        color: #fff;
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 1.2;
+        background: rgba(6, 40, 50, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 999px;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+
+        svg {
+            flex: none;
+            width: 15px;
+            height: 15px;
         }
-        .card-list{
-            display: none;
+    }
+
+    // ---------- Matn qismi ----------
+    &__body {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px 20px 22px;
+    }
+
+    &__head {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 12px;
+    }
+
+    &__title {
+        margin: 0;
+        font-size: 20px;
+        font-weight: 800;
+        line-height: 1.25;
+        letter-spacing: -0.01em;
+    }
+
+    &__stars {
+        display: inline-flex;
+        flex: none;
+        gap: 2px;
+        padding-top: 4px;
+        color: var(--gold, #f4b942);
+
+        svg {
+            width: 15px;
+            height: 15px;
+            fill: currentColor;
+            stroke: none;
         }
-        .card-subtitle{
-            padding: 0;
-            font-size: 14px;
+    }
+
+    &__place {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 0;
+        color: var(--brand-deep, #0a4d5c);
+        font-size: 15px;
+        font-weight: 700;
+
+        svg {
+            flex: none;
+            width: 18px;
+            height: 18px;
         }
-        .card-title{
-            display: flex;
-            flex-direction: column-reverse;
-            padding: 0;
+    }
+
+    // Tavsif 4 qatordan oshsa, "..." bilan qisqaradi: kartalar bir xil balandlikda qoladi
+    &__text {
+        display: -webkit-box;
+        flex: 1;
+        margin: 0;
+        overflow: hidden;
+        color: #4a6567;
+        font-size: 15px;
+        line-height: 1.55;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+    }
+
+    // ---------- Narx va tugma ----------
+    &__foot {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-top: 6px;
+        padding-top: 16px;
+        border-top: 1px solid rgba(11, 46, 56, 0.1);
+
+        .ui-btn {
+            padding: 12px 20px;
         }
-        #card-icon{
-       display: none;
+    }
+
+    &__price {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__old {
+        color: #7d9294;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    &__new {
+        color: var(--brand-deep, #0a4d5c);
+        font-size: 24px;
+        font-weight: 800;
+        line-height: 1.1;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 0 0 1px rgba(11, 46, 56, 0.06), 0 32px 48px -28px rgba(10, 77, 92, 0.6);
         }
-        .card-image{
-            height: 150px;
+
+        &:hover &__img {
+            transform: scale(1.06);
         }
-        .card-text2{
-            display: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        &,
+        &__img {
+            transition: none;
         }
-        .card-wrap{
-            display: none;
+
+        &:hover,
+        &:hover &__img {
+            transform: none;
         }
-        .card-text{
-            padding: 0;
-            font-size: 12px;
-        }
+    }
 }

@@ -19,6 +19,8 @@
         border-radius: 50%;
         background: var(--gold, #f4b942);
         color: var(--ink, #0b2e38);
+        font-size: 14px; // ikonka o'rniga raqam berilganda (01, 02 ...)
+        font-weight: 800;
 
         svg {
             width: 20px;

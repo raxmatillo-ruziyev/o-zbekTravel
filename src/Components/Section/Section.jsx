@@ -1,38 +1,56 @@
-import React, { useEffect } from 'react'
-import './Section.scss'
-import { useTranslation } from 'react-i18next'
+import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Box from '../Box/Box';
 import Button from '../Button/Button';
-const Section = () => {
-    const { t, i18n } = useTranslation();
-    useEffect(() => {
-        const savedLanguage = localStorage.getItem('i18nextLng') || 'uz';
-        i18n.changeLanguage(savedLanguage);
-      }, []);
-    return (
-        <>
-            <div className="section">
-                <div className="container">
-                    <div className="section-box">
-                        <h1 className="section-title">{t("26")}</h1>
-                        <p className="section-text">{t("27")}</p>
-                        <ul className="section-list">
-                            <li className="section-item"><Box boxTitle={t("11")} boxText={t("12")} /></li>
-                            <li className="section-item"><Box boxTitle={t("13")} boxText={t("14")} /></li>
-                            <li className="section-item"><Box boxTitle={t("15")} boxText={t("16")} /></li>
-                            <li className="section-item"><Box boxTitle={t("28")} boxText={t("16")} /></li>
-                            <li className="section-item"><Box boxTitle={t("11")} boxText={t("12")} /></li>
-                            <li className="section-item"><Box boxTitle={t("13")} boxText={t("14")} /></li>
-                            <li className="section-item"><Box boxTitle={t("15")} boxText={t("16")} /></li>
-                            <li className="section-item"><Box boxTitle={t("28")} boxText={t("16")} /></li>
+import './Section.scss';
 
-                        </ul>
-                        <a className="header-next-item"><Button name={t("29")} color={"#FF9548"}/></a>
+// Sakkizta takrorlangan <li><Box/></li> o'rniga bitta ro'yxat: [sarlavha kaliti, matn kaliti].
+// DIQQAT: eski kodda shu to'rt karta aynan ikki marta ketma-ket takrorlangan edi,
+// to'rtinchisi ("28") esa uchinchisi ("15") bilan bir xil matn kaliti ("16") ishlatgan.
+// Hozircha hammasi saqlandi, kerakli matnlarni shu yerda almashtirasiz.
+const PERKS = [
+    ['11', '12'],
+    ['13', '14'],
+    ['15', '16'],
+    ['28', '16'],
+    ['11', '12'],
+    ['13', '14'],
+    ['15', '16'],
+    ['28', '16'],
+];
+
+// Til tiklash (useEffect + changeLanguage) bu yerdan olib tashlandi: u endi faqat Navbar'da.
+// Eski kodda <Button /> ni yana <a> bilan o'rab qo'yilgan edi: <a> ichida <a> (konsoldagi xato shundan).
+const Section = () => {
+    const { t } = useTranslation();
+
+    return (
+        <section className="whyus">
+            <div className="whyus__inner">
+                <div className="whyus__panel">
+                    <h2 className="whyus__title">{t('26')}</h2>
+                    <p className="whyus__text">{t('27')}</p>
+
+                    <ul className="whyus__list">
+                        {PERKS.map(([title, text], i) => (
+                            <li key={i}>
+                                <Box
+                                    tone="glass"
+                                    icon={String(i + 1).padStart(2, '0')}
+                                    boxTitle={t(title)}
+                                    boxText={t(text)}
+                                />
+                            </li>
+                        ))}
+                    </ul>
+
+                    <div className="whyus__cta">
+                        <Button name={t('29')} variant="primary" />
                     </div>
                 </div>
             </div>
-        </>
-    )
-}
+        </section>
+    );
+};
 
-export default Section
+export default Section;
