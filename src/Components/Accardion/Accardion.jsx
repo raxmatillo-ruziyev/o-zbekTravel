@@ -1,88 +1,83 @@
-import React, { useEffect, useState } from 'react';
-import { Collapse } from 'antd';
+import React, { useId, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import './Accardion.scss';
-import { IoIosAddCircle, IoIosRemoveCircle } from 'react-icons/io';
 
-const { Panel } = Collapse;
+// Savol va javob kalitlari. DIQQAT: eski kodda to'rtala savolga bir xil javob ("48") berilgan edi.
+// Ehtimol, vaqtincha: har bir savolga o'z javob kalitini shu yerda yozing.
+const FAQ = [
+    { q: '44', a: '48' },
+    { q: '45', a: '48' },
+    { q: '46', a: '48' },
+    { q: '47', a: '48' },
+];
 
+// antd Collapse (+ react-icons) o'rniga o'zimizning yengil akkordeon.
+// Xatti-harakat avvalgidek: birinchi savol ochiq, bir nechtasini birdaniga ochish mumkin.
+// Klaviatura bilan ishlaydi (Tab, Enter, Space), ekran o'qiydiganlar uchun aria belgilari bor.
+// Til tiklash (useEffect + changeLanguage) bu yerdan olib tashlandi: u endi faqat Navbar'da.
 const Accardion = () => {
-  const { t, i18n } = useTranslation();
-  const [activeKeys, setActiveKeys] = useState(['1']);
+    const { t } = useTranslation();
+    const baseId = useId();
+    const [open, setOpen] = useState(() => new Set([0]));
 
-  useEffect(() => {
-    const savedLanguage = localStorage.getItem('i18nextLng') || 'uz';
-    i18n.changeLanguage(savedLanguage);
-  }, [i18n]);
+    const toggle = (index) => {
+        setOpen((prev) => {
+            const next = new Set(prev);
+            if (next.has(index)) next.delete(index);
+            else next.add(index);
+            return next;
+        });
+    };
 
-  const onChange = (key) => {
-    setActiveKeys(key);
-  };
+    return (
+        <section className="faq">
+            <div className="faq__inner">
+                <h2 className="faq__title">{t('43')}</h2>
 
-  const text = t("48"); // Translation for the content
+                <div className="faq__list">
+                    {FAQ.map(({ q, a }, i) => {
+                        const isOpen = open.has(i);
+                        const buttonId = `${baseId}-q${i}`;
+                        const panelId = `${baseId}-a${i}`;
 
+                        return (
+                            <div className={`faq__item${isOpen ? ' is-open' : ''}`} key={i}>
+                                <h3 className="faq__q">
+                                    <button
+                                        type="button"
+                                        id={buttonId}
+                                        className="faq__btn"
+                                        aria-expanded={isOpen}
+                                        aria-controls={panelId}
+                                        onClick={() => toggle(i)}
+                                    >
+                                        <span>{t(q)}</span>
+                                        <span className="faq__icon" aria-hidden="true">
+                                            <svg viewBox="0 0 24 24" focusable="false">
+                                                <path d="M5 12h14" />
+                                                <path className="faq__plus" d="M12 5v14" />
+                                            </svg>
+                                        </span>
+                                    </button>
+                                </h3>
 
-  const items = [
-    {
-      key: '1',
-      label:<p className='accardion-text'>{ t("44")}</p>,
-      children: <p className='accardion-text'>{text}</p>,
-    },
-    {
-      key: '2',
-      label:<p className='accardion-text'>{ t("45")}</p>,
-      children: <p className='accardion-text'>{text}</p>,
-    },
-    {
-      key: '3',
-      label: <p className='accardion-text'>{ t("46")}</p>,
-      children: <p className='accardion-text'>{text}</p>,
-    },
-    {
-        key: '4',
-        label:<p className='accardion-text'>{ t("47")}</p>,
-        children: <p className='accardion-text'>{text}</p>,
-      },
-  ];
-
-  return (
-    <div className="accardion">
-      <div className="container">
-        <h1 className="accardion-title">{t('43')}</h1>
-        <div className="accardion-content">
-          <Collapse
-          style={{
-            margin:"20px 0"
-          }}
-            activeKey={activeKeys}
-            onChange={onChange}
-            expandIcon={({ isActive }) =>
-              isActive ? (
-                <IoIosRemoveCircle className="icon" style={{ fontSize: '30px' }} />
-              ) : (
-                <IoIosAddCircle className="icon" style={{ fontSize: '30px' }} />
-              )
-            }
-          >
-            {items.map((item) => (
-              <Panel
-            
-                header={
-                  <div className="panel-header">
-                    {item.label}
-                  </div>
-                }
-                key={item.key}
-              >
-                {item.children}
-              </Panel> 
-            ))
-            } 
-          </Collapse>
-        </div>
-      </div>
-    </div>
-  );
+                                <div
+                                    id={panelId}
+                                    role="region"
+                                    aria-labelledby={buttonId}
+                                    className="faq__panel"
+                                >
+                                    <div className="faq__panel-inner">
+                                        <p className="faq__a">{t(a)}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        );
+                    })}
+                </div>
+            </div>
+        </section>
+    );
 };
 
 export default Accardion;
