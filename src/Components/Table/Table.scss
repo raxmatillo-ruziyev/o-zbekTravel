@@ -31,7 +31,62 @@
         text-align: center;
     }
 
+    // ---------- Jadval tanlash tugmalari ----------
+    &__tabs {
+        display: flex;
+        gap: 6px;
+        width: fit-content;
+        max-width: 100%;
+        margin: 32px auto 0;
+        padding: 6px;
+        overflow-x: auto;
+        background: var(--tint, rgba(0, 153, 181, 0.12));
+        border-radius: 999px;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    &__tab {
+        flex: none;
+        margin: 0;
+        padding: 11px 22px;
+        color: var(--ink, #0b2e38);
+        font: inherit;
+        font-size: 15px;
+        font-weight: 700;
+        white-space: nowrap;
+        background: transparent;
+        border: 0;
+        border-radius: 999px;
+        cursor: pointer;
+        transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.6);
+        }
+
+        &.is-active {
+            color: #fff;
+            background: var(--brand-deep, #0a4d5c);
+            box-shadow: 0 10px 20px -12px rgba(10, 77, 92, 0.8);
+        }
+
+        &:focus-visible {
+            outline: 2px solid var(--brand-deep, #0a4d5c);
+            outline-offset: 2px;
+        }
+    }
+
     @media (max-width: 900px) {
         padding: 48px 0 16px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        &__tab {
+            transition: none;
+        }
     }
 }

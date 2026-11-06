@@ -4,7 +4,7 @@
 
 .plans {
     width: min(100%, 960px);
-    margin: 32px auto 0;
+    margin: 28px auto 0;
     color: var(--ink, #0b2e38);
     font-family: 'Manrope', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 
@@ -12,13 +12,13 @@
     &__scroll {
         overflow-x: auto;
         background: #fff;
-        border-radius: 24px;
-        box-shadow: 0 0 0 1px rgba(11, 46, 56, 0.08), 0 24px 40px -28px rgba(10, 77, 92, 0.5);
+        border-radius: 28px;
+        box-shadow: 0 0 0 1px rgba(11, 46, 56, 0.08), 0 30px 50px -30px rgba(10, 77, 92, 0.55);
     }
 
     &__table {
         width: 100%;
-        min-width: 560px;
+        min-width: 600px;
         font-size: 16px;
         border-collapse: separate;
         border-spacing: 0;
@@ -27,23 +27,30 @@
         td {
             padding: 18px 20px;
             text-align: center;
-            border-bottom: 1px solid rgba(11, 46, 56, 0.08);
+            border-bottom: 1px solid rgba(11, 46, 56, 0.07);
         }
 
-        // Sarlavha qatori
+        // ---------- Sarlavha qatori ----------
         thead th {
+            padding-top: 22px;
+            padding-bottom: 20px;
             color: #fff;
             font-size: 15px;
             font-weight: 800;
-            letter-spacing: 0.02em;
             background: var(--brand-deep, #0a4d5c);
             border-bottom: 0;
+
+            &.is-hot {
+                background: #0d6074;
+                box-shadow: inset 0 4px 0 var(--gold, #f4b942);
+            }
         }
 
-        // Birinchi ustun (xususiyat nomlari)
+        // Birinchi ustun (imkoniyat nomlari) yon tomonga surilganda ham joyida qoladi
         tr > :first-child {
             position: sticky;
             left: 0;
+            z-index: 1;
             text-align: left;
         }
 
@@ -60,10 +67,35 @@
             border-bottom: 0;
             background: #fff;
         }
+
+        // O'rtadagi ("Mashhur") ustun butun balandlik bo'ylab och firuza fonda
+        tbody td.is-hot {
+            background: #eaf6f9;
+        }
+    }
+
+    &__plan {
+        display: block;
+        font-size: 17px;
+    }
+
+    // "Mashhur" belgisi
+    &__badge {
+        display: block;
+        width: fit-content;
+        margin: 0 auto 6px;
+        padding: 3px 10px;
+        color: var(--ink, #0b2e38);
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        background: var(--gold, #f4b942);
+        border-radius: 999px;
     }
 
     &__cta-row td {
-        padding: 22px 12px;
+        padding: 24px 12px;
     }
 
     // ---------- Belgilar: kiradi / kirmaydi / noma'lum ----------
@@ -85,8 +117,8 @@
         }
 
         &--yes {
-            color: var(--brand-deep, #0a4d5c);
-            background: var(--tint, rgba(0, 153, 181, 0.12));
+            color: #fff;
+            background: var(--brand, #0099b5);
         }
 
         &--no {
@@ -115,12 +147,16 @@
     }
 
     @media (max-width: 600px) {
+        &__scroll {
+            border-radius: 22px;
+        }
+
         &__table {
             font-size: 15px;
 
             th,
             td {
-                padding: 14px 14px;
+                padding: 14px;
             }
         }
     }
