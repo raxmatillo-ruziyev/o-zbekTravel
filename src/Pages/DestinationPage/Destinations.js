@@ -10,10 +10,10 @@ import xiva from '../../assets/xiva.png';
 import zomin from '../../assets/zomin.png';
 
 import rasm10 from '../../assets/rasm10.jpeg';
-import rasm11 from '../../assets/rasm11.jpeg';
-import rasm12 from '../../assets/rasm12.jpeg';
+import rasm11 from '../../assets/rasm11.webp';
+import rasm12 from '../../assets/rasm12.webp';
 import rasm13 from '../../assets/rasm13.jpeg';
-import rasm14 from '../../assets/rasm14.jpeg';
+import rasm14 from '../../assets/rasm14.webp';
 import rasm15 from '../../assets/rasm15.jpeg';
 import rasm16 from '../../assets/rasm16.jpeg';
 import rasm17 from '../../assets/rasm17.jpeg';
