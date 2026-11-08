@@ -1,7 +1,7 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Jadval from '../Jadval/Jadval';
-import { TABLES, pick } from '../PlansData/PlansData';
+import { pick } from '../Jadval/plansData';
 import './Table.scss';
 
 // Eski kodda aynan bir xil <Jadval /> uch marta ketma-ket chizilgan edi.
@@ -12,7 +12,23 @@ const Table = () => {
     const { t, i18n } = useTranslation();
     const lang = (i18n.resolvedLanguage || i18n.language || 'uz').slice(0, 2);
     const [active, setActive] = useState(0);
+    const [data, setData] = useState(null); // { plans, labels, tables } backenddan keladi
     const tabRefs = useRef([]);
+
+    // Jadvallar backenddan (/api/plans) bir marta yuklanadi. Til almashganda qayta yuklash shart emas:
+    // javobda uch til birga keladi, matnni pick() tanlaydi
+    useEffect(() => {
+        const controller = new AbortController();
+        fetch('/api/plans', { signal: controller.signal })
+            .then((res) => (res.ok ? res.json() : Promise.reject(new Error(`HTTP ${res.status}`))))
+            .then(setData)
+            .catch((e) => e.name !== 'AbortError' && console.error('Jadvallarni yuklashda xato:', e));
+        return () => controller.abort();
+    }, []);
+
+    // Ma'lumot kelguncha hech narsa ko'rsatilmaydi
+    if (!data) return null;
+    const { plans, labels, tables: TABLES } = data;
 
     // Klaviatura: chap/o'ng o'q tugmalari, Home va End
     const handleKeyDown = (e) => {
@@ -59,7 +75,7 @@ const Table = () => {
                     id={`pricing-panel-${TABLES[active].id}`}
                     aria-labelledby={`pricing-tab-${TABLES[active].id}`}
                 >
-                    <Jadval table={TABLES[active]} />
+                    <Jadval table={TABLES[active]} plans={plans} labels={labels} />
                 </div>
             </div>
         </section>

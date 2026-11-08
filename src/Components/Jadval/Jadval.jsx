@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Button from '../Button/Button';
-import { PLANS, LABELS, pick } from '../PlansData/PlansData';
+import { pick } from './plansData';
 import './Jadval.scss';
 
 // react-icons (FcOk, IoIosCloseCircle) o'rniga kod ichidagi SVG belgilar
@@ -33,10 +33,10 @@ const Mark = ({ value, yes, no }) => {
     );
 };
 
-// Bitta jadval. Ma'lumot `table` prop'i orqali keladi (plansData.js dagi TABLES elementi).
+// Bitta jadval. Ma'lumot prop'lar orqali keladi: table (bitta jadval), plans (ustunlar), labels (yozuvlar).
 // Til tiklash (useEffect + changeLanguage) bu yerdan olib tashlandi: u endi faqat Navbar'da.
 // Eski kodda har bir <Button /> yana <a> bilan o'ralgan edi (uchta <a> ichida <a>).
-const Jadval = ({ table }) => {
+const Jadval = ({ table, plans: PLANS, labels: LABELS }) => {
     const { t, i18n } = useTranslation();
     const lang = (i18n.resolvedLanguage || i18n.language || 'uz').slice(0, 2);
     const text = (value) => pick(value, lang);
